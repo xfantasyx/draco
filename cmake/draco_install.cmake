@@ -98,7 +98,7 @@ macro(draco_setup_install_target)
     configure_package_config_file(
       "${draco_root}/cmake/draco-config.cmake.template"
       "${draco_build}/draco-config.cmake"
-      INSTALL_DESTINATION "${data_path}/cmake/draco")
+      INSTALL_DESTINATION "cmake")
 
     write_basic_package_version_file(
       "${draco_build}/draco-config-version.cmake"
@@ -114,10 +114,10 @@ macro(draco_setup_install_target)
       EXPORT dracoExport
       NAMESPACE draco::
       FILE draco-targets.cmake
-      DESTINATION "${data_path}/cmake/draco")
+      DESTINATION "cmake")
 
     install(FILES "${draco_build}/draco-config.cmake"
                   "${draco_build}/draco-config-version.cmake"
-            DESTINATION "${data_path}/cmake/draco")
+            DESTINATION "cmake")
   endif(DRACO_INSTALL)
 endmacro()
